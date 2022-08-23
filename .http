@@ -1,0 +1,51 @@
+@host=localhost:9090
+
+###
+POST /?withResponseBody=true
+Host: {{ host }}
+Content-Type: application/json
+
+{
+    "method": "GET",
+    "url": "https://gorest.co.in/public/v2/users"
+}
+
+###
+POST /?withResponseBody=true
+Host: {{ host }}
+Content-Type: application/json
+
+{
+    "method": "POST",
+    "url": "https://petstore.swagger.io/v2/user",
+    "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "body": "{\"id\": 0,\"username\": \"@RavilTest\",\"firstName\": \"Ravil\",\"lastName\": \"Zaripov\",\"email\": \"example@mail.kz\",\"password\": \"qwerty987123\", \"phone\": \"+77776665544\",\"userStatus\": 1}"
+}
+
+###
+POST /
+Host: {{ host }}
+Content-Type: application/json
+
+{
+    "method": "OPTIONS",
+    "url": "https://google.com"
+}
+
+###
+POST /
+Host: {{ host }}
+Content-Type: application/json
+
+{
+    "method": "GET",
+    "url": "https://gmail.com"
+}
+
+
+###
+GET /print
+Host: {{ host }}
